@@ -81,14 +81,15 @@ As for video tracks, we want fragments of `2s`, specified with `--fragment-durat
 
 ## Subtitles
 
-https://github.com/matmoi/create-DASH-HLS/raw/master/examples/elephants-dream-subtitles-de.vtt
-https://github.com/matmoi/create-DASH-HLS/raw/master/examples/elephants-dream-subtitles-en.vtt
+We simply consider two [webvtt](https://w3c.github.io/webvtt/) files to illustrate this example :
+- https://github.com/matmoi/create-DASH-HLS/raw/master/examples/elephants-dream-subtitles-de.vtt
+- https://github.com/matmoi/create-DASH-HLS/raw/master/examples/elephants-dream-subtitles-en.vtt
 
-> Both subtitle files have unsupported features on line 24, you should manually remove `line:6% size:110%` otherwise subtitles will stop working after this moment.
+> As I'm typing, Bento4 has a [bug](https://github.com/axiomatic-systems/Bento4/issues/150) which prevents using external webvtt files with on-demande profile. I propose a fix in `fix/mp4-dash.py`, to replace `utils/mp4-dash.py` in bento install folder.
 
 ## Generate DASH/HLS files for streaming
 
-```mp4dash --verbose --profiles=on-demand --hls --subtitles -o ElephantsDream ed_hd_640x360_fragments.mp4 ed_hd_480x270_fragments.mp4 ed_hd_320x180_fragments.mp4 ed_hd_english_fragments.mp4 ed_hd_french_fragments.mp4```
+```mp4dash --verbose --profiles=on-demand --hls --subtitles -o ElephantsDream ed_hd_640x360_fragments.mp4 ed_hd_480x270_fragments.mp4 ed_hd_320x180_fragments.mp4 ed_hd_english_fragments.mp4 ed_hd_french_fragments.mp4 [+format=webvtt,+language=eng]elephants-dream-subtitles-en.vtt [+format=webvtt,+language=deu]elephants-dream-subtitles-de.vtt```
 
 ## Other samples
 
