@@ -5,8 +5,8 @@ To illustrate with an example, we use the film [Elephants Dream](https://orange.
 
 ## Requirements
 
-[ffmpeg](https://www.ffmpeg.org/download.html) is needed to prepare media files for ABR streaming, including `ffprobe` command line tool to display information about media streams.
-[bento4](https://www.bento4.com/downloads/) is also required to structure media bitstreams as expected. 
+- [ffmpeg](https://www.ffmpeg.org/download.html) is needed to prepare media files for ABR streaming, including `ffprobe` command line tool to display information about media streams.
+- [bento4](https://www.bento4.com/downloads/) is also required to structure media bitstreams as expected. 
 
 ## Video streams
 The video track of `ed_hd.mp4` is gonna be my mezzanine media file, let's have a look at the bitstream structure using `ffprobe` :
@@ -81,8 +81,8 @@ As for video tracks, we want fragments of `2s`, specified with `--fragment-durat
 
 ## Subtitles
 
-https://github.com/gpac/gpac/raw/master/tests/media/webvtt/elephants-dream-subtitles-en.vtt
-https://github.com/gpac/gpac/raw/master/tests/media/webvtt/elephants-dream-subtitles-de.vtt
+https://github.com/matmoi/create-DASH-HLS/raw/master/examples/elephants-dream-subtitles-de.vtt
+https://github.com/matmoi/create-DASH-HLS/raw/master/examples/elephants-dream-subtitles-en.vtt
 
 > Both subtitle files have unsupported features on line 24, you should manually remove `line:6% size:110%` otherwise subtitles will stop working after this moment.
 
@@ -92,6 +92,6 @@ https://github.com/gpac/gpac/raw/master/tests/media/webvtt/elephants-dream-subti
 
 ## Other samples
 
-[Bitmovin](https://bitmovin.com/mpeg-dash-hls-examples-sample-streams/) provides a bunch of samples for DASH and HLS.
+- [Bitmovin](https://bitmovin.com/mpeg-dash-hls-examples-sample-streams/) provides a bunch of samples for DASH and HLS.
 https://bitmovin.com/mpeg-dash-hls-examples-sample-streams/
-[Akamai](http://players.akamai.com) also proposes several DASH and HLS streams.
+- [Akamai](http://players.akamai.com) also proposes several DASH and HLS streams.
