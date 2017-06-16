@@ -89,7 +89,9 @@ We simply consider two [webvtt](https://w3c.github.io/webvtt/) files to illustra
 
 ## Generate DASH/HLS files for streaming
 
-```mp4dash --verbose --profiles=on-demand --hls --subtitles -o ElephantsDream ed_hd_640x360_fragments.mp4 ed_hd_480x270_fragments.mp4 ed_hd_320x180_fragments.mp4 ed_hd_english_fragments.mp4 ed_hd_french_fragments.mp4 [+format=webvtt,+language=eng]elephants-dream-subtitles-en.vtt [+format=webvtt,+language=deu]elephants-dream-subtitles-de.vtt```
+```
+mp4dash --verbose --profiles=on-demand --hls --subtitles -o ElephantsDream ed_hd_640x360_fragments.mp4 ed_hd_480x270_fragments.mp4 ed_hd_320x180_fragments.mp4 ed_hd_english_fragments.mp4 ed_hd_french_fragments.mp4 [+format=webvtt,+language=eng]elephants-dream-subtitles-en.vtt [+format=webvtt,+language=deu]elephants-dream-subtitles-de.vtt
+```
 
 ## Other samples
 
