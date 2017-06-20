@@ -85,7 +85,7 @@ We simply consider two [webvtt](https://w3c.github.io/webvtt/) files to illustra
 - https://github.com/matmoi/create-DASH-HLS/raw/master/examples/elephants-dream-subtitles-de.vtt
 - https://github.com/matmoi/create-DASH-HLS/raw/master/examples/elephants-dream-subtitles-en.vtt
 
-> As I'm typing, Bento4 has a [bug](https://github.com/axiomatic-systems/Bento4/issues/150) which prevents using external webvtt files with on-demande profile. I propose a fix in `fix/mp4-dash.py`, to replace `utils/mp4-dash.py` in bento install folder.
+> As I'm typing, Bento4 has a [bug](https://github.com/axiomatic-systems/Bento4/issues/150) which prevents using external webvtt files with on-demande profile. I proposed a fix in `fix/mp4-dash.py` to replace `utils/mp4-dash.py` in bento install folder. This fix also implements text tracks for HLS output.
 
 ## Generate DASH/HLS files for streaming
 
