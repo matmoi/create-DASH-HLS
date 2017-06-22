@@ -6,10 +6,10 @@ To illustrate with an example, we use the film [Elephants Dream](https://orange.
 ## Requirements
 
 - [ffmpeg](https://www.ffmpeg.org/download.html) is needed to prepare media files for ABR streaming, including `ffprobe` command line tool to display information about media streams.
-- [bento4](https://www.bento4.com/downloads/) is also required to structure media bitstreams as expected. 
+- [bento4](https://www.bento4.com/downloads/) is also required to structure media bitstreams as expected. For now, I recommend using this [fork](https://github.com/matmoi/Bento4) which contains a bunch of fixes to handle webvtt subtitles properly. It's not required to build it from scratch, one can simply replace `Bento4\utils\mp4-dash.py` with this [version](https://raw.githubusercontent.com/matmoi/Bento4/master/Source/Python/utils/mp4-dash.py).
 
 ## Video streams
-The video track of `ed_hd.mp4` is gonna be my mezzanine media file, let's have a look at the bitstream structure using `ffprobe` :
+The video track of `ed_hd.mp4` will be used as the mezzanine media file. A mezzanine file is a lightly compressed master file that will stand up to making additional compressed versions. Let's have a look at how the bitstream is structured, using `ffprobe` :
 
 ```
 ffprobe -show_frames -select_streams v:0 -print_format csv=print_section=0:item_sep=; -show_entries frame=key_frame,pkt_pts_time,coded_picture_number ed_hd.mp4 > ed_hd.csv
@@ -85,7 +85,7 @@ We simply consider two [webvtt](https://w3c.github.io/webvtt/) files to illustra
 - https://github.com/matmoi/create-DASH-HLS/raw/master/examples/elephants-dream-subtitles-de.vtt
 - https://github.com/matmoi/create-DASH-HLS/raw/master/examples/elephants-dream-subtitles-en.vtt
 
-> As I'm typing, Bento4 has a [bug](https://github.com/axiomatic-systems/Bento4/issues/150) which prevents using external webvtt files with on-demande profile. I proposed a fix in `fix/mp4-dash.py` to replace `utils/mp4-dash.py` in bento install folder. This fix also implements text tracks for HLS output.
+> As I'm typing, Bento4 has a [bug](https://github.com/axiomatic-systems/Bento4/issues/150) which prevents using external webvtt files with on-demande profile. I proposed a fix in https://github.com/matmoi/Bento4.
 
 ## Generate DASH/HLS files for streaming
 
